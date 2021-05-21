@@ -1,0 +1,37 @@
+$fields-grey: rgb(219, 219, 219);
+$fields-focus: #3e49c1;
+$fields-error: red;
+$fields-hover: rgb(232, 232, 232);
+$fields-background: white;
+$fields-radius: 5px;
+
+$color-purple: #3e49c1;
+$color-purple-light: rgba(78, 89, 251, 0.58);
+$color-red: red;
+$color-green: #42b983;
+
+$color-grey: #ececec;
+$color-grey-light: #dcdcdc;
+
+$loading-border: rgb(0, 0, 0);
+$loading-background: rgb(219, 219, 219);
+$loading-process: #ECECEC;
+
+$background: #f4f6f8;
+
+$screens: (
+        wide: 1300,
+        large: 1200,
+        medium: 992,
+        small: 767,
+        exsm: 576
+);
+
+@mixin media($value) {
+  $width: map_get($screens, $value);
+  @if ($width != 0) {
+    @media screen and (max-width: $width + 'px') {
+      @content
+    }
+  }
+}
